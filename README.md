@@ -1,5 +1,8 @@
 SPA поиск видео из youtube.
 
+Загрузка модулей: npm install
+Инициализация проекта: npm start
+
 Авторизация реализована без апи, список пользоватей находится в файле components/Login/users.js
 Например login: user1, password: 111
 
