@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Form, Input, Button, Row } from 'antd';
 import usersData from "./users";
 import { Redirect } from 'react-router-dom';
@@ -39,6 +39,7 @@ const LoginForm = (props) => {
                 }}
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
+                style={{"paddingTop" : "40px"}}
             >
                 <Form.Item
                 label="Логин"

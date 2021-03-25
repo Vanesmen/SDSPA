@@ -1,6 +1,6 @@
 import FavoritesFormContainer from "./FavoritesForm/FavoritesFormContainer";
 import React, { useState } from 'react';
-import { Button, Modal, Form, Input, Radio } from 'antd';
+import { Button } from 'antd';
 
 
 const ModalFavoritesSettings = (props) => {
@@ -33,18 +33,5 @@ const ModalFavoritesSettings = (props) => {
   );
 };
 
-
-// const ModalFavoritesSettings = (props) => {
-//     return (
-//         <>ы
-//           <Button type="primary" onClick={showModal}>
-//             {props.btnName}
-//           </Button>
-//           <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-/*             <FavoritesFormContainer currentRequest={props.currentRequest} settingsMode={props.settingsMode}/> */
-//           </Modal>
-//         </>
-//       );
-// }
 
 export default ModalFavoritesSettings;

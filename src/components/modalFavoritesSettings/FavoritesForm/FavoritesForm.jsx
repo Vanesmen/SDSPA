@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
-import { Form, Input, Button, Cascader, Slider, Modal  } from 'antd';
+import { Form, Input, Cascader, Slider, Modal  } from 'antd';
 
 
 const FavoritesForm = (props) => {
   const [form] = Form.useForm();
 
-  useEffect ( () => {
     form.setFieldsValue({
       requestText: props.currentRequest ? props.currentRequest.requestText : props.requestText,
       name: props.currentRequest ? props.currentRequest.name : "",
       maxResults: props.currentRequest ? props.currentRequest.maxResults : 13,
       sortMethod: props.currentRequest ? [props.currentRequest.sortMethod] : ["data"],
-    });
-  }, [props.requestText]);
+    }, [props.requestText]);
+  
 
   const onCreate = (values) => {
     let newRequest = {
@@ -128,41 +127,8 @@ const FavoritesForm = (props) => {
               50: 50,
             }}
             />
-        </Form.Item>
-  
-  
-        
+        </Form.Item>        
       </Form>
-      {/* <Form
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-        initialValues={{
-          modifier: 'public',
-        }}
-      >
-        <Form.Item
-          name="title"
-          label="Title"
-          rules={[
-            {
-              required: true,
-              message: 'Please input the title of collection!',
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item name="description" label="Description">
-          <Input type="textarea" />
-        </Form.Item>
-        <Form.Item name="modifier" className="collection-create-form_last-form-item">
-          <Radio.Group>
-            <Radio value="public">Public</Radio>
-            <Radio value="private">Private</Radio>
-          </Radio.Group>
-        </Form.Item>
-      </Form> */}
     </Modal>
   );
 };

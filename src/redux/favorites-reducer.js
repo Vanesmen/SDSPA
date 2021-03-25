@@ -4,13 +4,6 @@ const DELETE_REQUEST = "DELETE_REQUEST";
 
 let initialState = {
     requestItems: [
-        {   
-            id: 1,
-            maxResults: 18,
-            name: "Дота моя жизнь2",
-            requestText: "дота2 бла бла",
-            sortMethod: "relevance",
-        },
     ]
     
 }

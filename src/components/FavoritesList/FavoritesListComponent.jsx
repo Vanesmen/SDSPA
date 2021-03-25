@@ -1,8 +1,7 @@
 import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Row } from 'antd';
 import { List, Typography } from 'antd';
-import {FormOutlined} from '@ant-design/icons';
 import ModalFavoritesSettings from "../modalFavoritesSettings/ModalFavoritesSettings";
 const { Title } = Typography;
 
