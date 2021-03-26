@@ -1,12 +1,14 @@
 import {setUserLS} from "../localStorage/localStorage"
+import {getUserLS} from "../localStorage/localStorage"
+import {deleteUserLS} from "../localStorage/localStorage"
 
 const SET_USER = "SET_USER";
 const LOG_OUT = "LOG_OUT";
 
 let initialState = {
-    isAuth: false,
-    login: null,
-    token: null
+    isAuth: getUserLS().isAuth,
+    login: getUserLS().login,
+    token: getUserLS().token
 }
 
 function random32bit() {
@@ -20,9 +22,10 @@ const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER:
             let token = random32bit();
-            setUserLS(action.user, token)
+            setUserLS(action.user, token);
             return {...state, isAuth: true, login: action.user, token: token}
         case LOG_OUT:
+            deleteUserLS();
             return {...state, isAuth: false, login: null, token: null}
         default:
             return state;
