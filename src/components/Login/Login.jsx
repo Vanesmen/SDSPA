@@ -23,7 +23,8 @@ const LoginForm = (props) => {
     };
 
     const onFinish = (values) => {
-        props.setUser(values.login)
+        props.setUser(values.login);
+        props.setFavoriteList();
       };
     
     const onFinishFailed = (errorInfo) => {
@@ -103,7 +104,7 @@ const Login = (props) => {
         return <Redirect to="/search" />
     }
     return (
-        <LoginForm props={{...props}} setUser={props.setUser}/>
+        <LoginForm props={{...props}} setUser={props.setUser} setFavoriteList={props.setFavoriteList}/>
     )
 }
 

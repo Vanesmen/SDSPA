@@ -5,12 +5,12 @@ import { Form, Input, Cascader, Slider, Modal  } from 'antd';
 const FavoritesForm = (props) => {
   const [form] = Form.useForm();
 
-    form.setFieldsValue({
-      requestText: props.currentRequest ? props.currentRequest.requestText : props.requestText,
-      name: props.currentRequest ? props.currentRequest.name : "",
-      maxResults: props.currentRequest ? props.currentRequest.maxResults : 13,
-      sortMethod: props.currentRequest ? [props.currentRequest.sortMethod] : ["data"],
-    }, [props.requestText]);
+  form.setFieldsValue({
+    requestText: props.currentRequest ? props.currentRequest.requestText : props.requestText,
+    name: props.currentRequest ? props.currentRequest.name : "",
+    maxResults: props.currentRequest ? props.currentRequest.maxResults : 13,
+    sortMethod: props.currentRequest ? [props.currentRequest.sortMethod] : ["data"],
+  }, [props.requestText]);
   
 
   const onCreate = (values) => {

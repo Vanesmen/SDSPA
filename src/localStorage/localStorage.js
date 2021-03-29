@@ -5,7 +5,6 @@ export const setUserLS = (login, token) => {
 
 export const getUserLS = () => {
     if (localStorage["token"] && localStorage["token"] !== "null") {
-        debugger
         return ({            
             login: localStorage.getItem(`user`),
             token: localStorage.getItem(`token`),
@@ -25,6 +24,13 @@ export const deleteUserLS = () => {
     localStorage.setItem(`token`, null);
 }
  
-export const setFavoriteListLS = (login, token) => {
-    localStorage.setItem(`${login}-user`, token)
+export const setFavoriteListLS = (favoriteList) => {
+    let login = localStorage.getItem("user");
+    localStorage.setItem(`${login}-favoriteList`, JSON.stringify(favoriteList))
 }
+
+export const getFavoriteListLS = () => {
+    let login = localStorage.getItem("user");
+    return JSON.parse(localStorage.getItem(`${login}-favoriteList`));
+}
+

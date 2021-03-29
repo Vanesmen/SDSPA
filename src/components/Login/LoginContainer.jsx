@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Login from "./Login";
-import {setUser} from "../../redux/auth-reducer"
+import {setUser} from "../../redux/auth-reducer";
+import {setFavoriteList} from "../../redux/favorites-reducer";
 
 let mapStateToProps = (state) => {
   return {
@@ -10,7 +11,7 @@ let mapStateToProps = (state) => {
   }
 }
 
-const LoginContainer = connect(mapStateToProps, {setUser})(Login);
+const LoginContainer = connect(mapStateToProps, {setUser, setFavoriteList})(Login);
 
 
 
